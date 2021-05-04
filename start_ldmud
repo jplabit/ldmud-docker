@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+MUDHOME="${HOME}/Google Drive/MUD"
+LIBDIR="${MUDHOME}/lib"
+IMAGE="ldmud"
+
+docker run -p 4242:4242 -p 4246:4246/udp -u $UID -v "${LIBDIR}:/mud/lib" ${IMAGE}
