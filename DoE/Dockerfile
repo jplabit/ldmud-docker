@@ -1,7 +1,7 @@
 FROM debian:stretch AS build
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends build-essential ca-certificates git bison autoconf autogen automake libgcrypt20-dev \
+ && apt-get install -y --no-install-recommends build-essential ca-certificates git bison autoconf autogen automake libgcrypt20-dev libpcre3 libpcre3-dev \
  && git clone https://github.com/ldmud/ldmud.git
 COPY doe_settings ldmud/src/settings
 RUN cd ldmud/src && ./autogen.sh \
